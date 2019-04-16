@@ -1,0 +1,85 @@
+﻿<Window x:Class="YSLinkChecker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:YSLinkChecker"
+        xmlns:i18n="clr-namespace:YSLinkChecker.Properties"
+        mc:Ignorable="d"
+        Title="YSLinkChecker" Height="500" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="icon.ico">
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="LightBlue" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Padding" Value="10, 7" />
+        </Style>
+    </Window.Resources>
+
+    <Grid ShowGridLines="False">
+        <Grid.RowDefinitions>
+            <RowDefinition x:Name="Header" Height="50" />
+            <RowDefinition x:Name="Body" Height="350*" />
+            <RowDefinition x:Name="Footer" Height="40" />
+            <RowDefinition x:Name="StatusBar" Height="25" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <!-- Controls -->
+        <!-- Header -->
+        <WrapPanel x:Name="YSHeader" Grid.Column="0" Grid.Row="0" Margin="0, 10" HorizontalAlignment="Center">
+            <Label x:Name="lblAdress" Padding="10, 5" FontSize="15" Content="{x:Static i18n:Resources.lblAdress}" />
+            <TextBox x:Name="txtAddress" Width="300" FontSize="15" Padding="3" Text="https://www.yusufsezer.com" />
+            <Button x:Name="btnCheck" Margin="5, 0, 5, 0" Content="{x:Static i18n:Resources.btnCheck}" />
+            <Button x:Name="btnClear" IsEnabled="False" Content="{x:Static i18n:Resources.btnClear}" />
+        </WrapPanel>
+
+        <!-- Body -->
+        <StackPanel x:Name="YSBody" Grid.Column="0" Grid.Row="1" Height="auto" Width="550" IsEnabled="False" >
+            <WrapPanel HorizontalAlignment="Center" Margin="0, 5">
+                <Button x:Name="btnTotal" Background="LightGreen" Margin="10, 0">
+                    <WrapPanel>
+                        <TextBlock x:Name="btnTotalText" Text="{x:Static i18n:Resources.btnTotal}" />
+                        <TextBlock x:Name="btnTotalCount" Text="()" Visibility="Hidden" />
+                    </WrapPanel>
+                </Button>
+                <Button x:Name="btnInternal" Margin="10, 0">
+                    <WrapPanel>
+                        <TextBlock x:Name="btnInternalText" Text="{x:Static i18n:Resources.btnInternal}" />
+                        <TextBlock x:Name="btnInternalCount" Visibility="Hidden" />
+                    </WrapPanel>
+                </Button>
+                <Button x:Name="btnExternal" Background="LightCoral" Margin="10, 0">
+                    <WrapPanel>
+                        <TextBlock x:Name="btnExternalText" Text="{x:Static i18n:Resources.btnExternal}" />
+                        <TextBlock x:Name="btnExternalCount" Visibility="Hidden" />
+                    </WrapPanel>
+                </Button>
+            </WrapPanel>
+            <DataGrid x:Name="dgLinks" IsReadOnly="True" Height="305" AutoGenerateColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn x:Name="dgURL" Header="{x:Static i18n:Resources.dgURL}" Width="*" Binding="{Binding Path=URL}" />
+                    <DataGridTextColumn x:Name="dgText" Header="{x:Static i18n:Resources.dgURL}" Width="*" Binding="{Binding Path=Text}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+
+        <!-- Footer -->
+        <WrapPanel x:Name="YSFooter" Grid.Column="0" Grid.Row="2" Margin="0, 5" HorizontalAlignment="Center" IsEnabled="False">
+            <Button x:Name="btnPDF" Margin="10, 0" Content="{x:Static i18n:Resources.btnPDF}" />
+            <Button x:Name="btnTXT" Margin="10, 0" Content="{x:Static i18n:Resources.btnTXT}" />
+            <Button x:Name="btnCSV" Margin="10, 0" Content="{x:Static i18n:Resources.btnCSV}" />
+        </WrapPanel>
+
+        <!-- Status -->
+        <StackPanel x:Name="YSStatus" Grid.Column="0" Grid.Row="3" VerticalAlignment="Bottom">
+            <StatusBar>
+                <StatusBarItem x:Name="itemStatus" HorizontalAlignment="Left" />
+                <StatusBarItem x:Name="itemCopyright" HorizontalAlignment="Right" Content="Yusuf SEZER (www.yusufsezer.com)" />
+            </StatusBar>
+        </StackPanel>
+    </Grid>
+
+</Window>
