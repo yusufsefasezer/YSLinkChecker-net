@@ -210,7 +210,7 @@ namespace YSLinkChecker
                 document.AddTitle("YSLinkChecker");
                 document.AddSubject("YSLinkChecker");
                 document.AddCreator("YSLinkChecker");
-                document.AddAuthor("Yusuf SEZER (www.yusufsezer.com)");
+                document.AddAuthor("Yusuf Sezer (www.yusufsezer.com)");
 
                 // PDF Font
                 var fontPath = Environment.GetFolderPath(Environment.SpecialFolder.Fonts) + @"\arial.ttf";

@@ -77,7 +77,7 @@
         <StackPanel x:Name="YSStatus" Grid.Column="0" Grid.Row="3" VerticalAlignment="Bottom">
             <StatusBar>
                 <StatusBarItem x:Name="itemStatus" HorizontalAlignment="Left" />
-                <StatusBarItem x:Name="itemCopyright" HorizontalAlignment="Right" Content="Yusuf SEZER (www.yusufsezer.com)" />
+                <StatusBarItem x:Name="itemCopyright" HorizontalAlignment="Right" Content="Yusuf Sezer (www.yusufsezer.com)" />
             </StatusBar>
         </StackPanel>
     </Grid>
