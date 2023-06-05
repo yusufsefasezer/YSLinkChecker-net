@@ -11,6 +11,10 @@ This application allows to get information and report about links on the web pag
 * i18n - You can use the application by adding a new translation.
 * WPF - Simple and Flexible design.
 
+## Screenshot
+![screenshot1](screenshot/screenshot1.png)
+![screenshot2](screenshot/screenshot2.png)
+
 # License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details
 
